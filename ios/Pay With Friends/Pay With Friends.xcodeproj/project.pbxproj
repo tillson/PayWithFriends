@@ -12,6 +12,7 @@
 		56AE116E220E7E9F0020C18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE116C220E7E9F0020C18B /* Main.storyboard */; };
 		56AE1170220E7EA00020C18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56AE116F220E7EA00020C18B /* Assets.xcassets */; };
 		56AE1173220E7EA00020C18B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */; };
+		56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		56AE116F220E7EA00020C18B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56AE1172220E7EA00020C18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56AE1174220E7EA00020C18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				56AE1168220E7E9F0020C18B /* AppDelegate.swift */,
 				56AE116A220E7E9F0020C18B /* ViewController.swift */,
+				56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */,
 				56AE116C220E7E9F0020C18B /* Main.storyboard */,
 				56AE116F220E7EA00020C18B /* Assets.xcassets */,
 				56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */,
+				56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */,
 				56AE1169220E7E9F0020C18B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
