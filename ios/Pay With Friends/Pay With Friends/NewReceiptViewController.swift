@@ -80,7 +80,6 @@ extension NewReceiptViewController: AVCapturePhotoCaptureDelegate {
         let capturedImage = UIImage.init(data: imageData , scale: 1.0)
         if let image = capturedImage {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-            print(image.)
         }
 
     }
