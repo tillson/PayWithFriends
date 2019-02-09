@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8B16220F3CFB00142091 /* PaymentListTableView.swift */; };
 		56AE1169220E7E9F0020C18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE1168220E7E9F0020C18B /* AppDelegate.swift */; };
 		56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE116A220E7E9F0020C18B /* ViewController.swift */; };
 		56AE116E220E7E9F0020C18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE116C220E7E9F0020C18B /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		568C8B16220F3CFB00142091 /* PaymentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTableView.swift; sourceTree = "<group>"; };
 		56AE1165220E7E9F0020C18B /* Pay With Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pay With Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AE1168220E7E9F0020C18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56AE116A220E7E9F0020C18B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				56AE116A220E7E9F0020C18B /* ViewController.swift */,
 				56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */,
 				56AE116C220E7E9F0020C18B /* Main.storyboard */,
+				568C8B16220F3CFB00142091 /* PaymentListTableView.swift */,
 				56AE116F220E7EA00020C18B /* Assets.xcassets */,
 				56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */,
 				56AE1174220E7EA00020C18B /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */,
 				56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */,
+				568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */,
 				56AE1169220E7E9F0020C18B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
