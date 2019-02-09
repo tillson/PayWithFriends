@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8B16220F3CFB00142091 /* PaymentListTableView.swift */; };
+		568C8B1C220F3FE400142091 /* ReceiptItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */; };
+		568C8B1D220F3FE400142091 /* ReceiptItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568C8B1B220F3FE400142091 /* ReceiptItemTableViewCell.xib */; };
 		56AE1169220E7E9F0020C18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE1168220E7E9F0020C18B /* AppDelegate.swift */; };
 		56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE116A220E7E9F0020C18B /* ViewController.swift */; };
 		56AE116E220E7E9F0020C18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE116C220E7E9F0020C18B /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		568C8B16220F3CFB00142091 /* PaymentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTableView.swift; sourceTree = "<group>"; };
+		568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemTableViewCell.swift; sourceTree = "<group>"; };
+		568C8B1B220F3FE400142091 /* ReceiptItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptItemTableViewCell.xib; sourceTree = "<group>"; };
 		56AE1165220E7E9F0020C18B /* Pay With Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pay With Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AE1168220E7E9F0020C18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56AE116A220E7E9F0020C18B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */,
 				56AE116C220E7E9F0020C18B /* Main.storyboard */,
 				568C8B16220F3CFB00142091 /* PaymentListTableView.swift */,
+				568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */,
+				568C8B1B220F3FE400142091 /* ReceiptItemTableViewCell.xib */,
 				56AE116F220E7EA00020C18B /* Assets.xcassets */,
 				56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */,
 				56AE1174220E7EA00020C18B /* Info.plist */,
@@ -131,6 +137,7 @@
 				56AE1173220E7EA00020C18B /* LaunchScreen.storyboard in Resources */,
 				56AE1170220E7EA00020C18B /* Assets.xcassets in Resources */,
 				56AE116E220E7E9F0020C18B /* Main.storyboard in Resources */,
+				568C8B1D220F3FE400142091 /* ReceiptItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568C8B1C220F3FE400142091 /* ReceiptItemTableViewCell.swift in Sources */,
 				56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */,
 				56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */,
 				568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */,
