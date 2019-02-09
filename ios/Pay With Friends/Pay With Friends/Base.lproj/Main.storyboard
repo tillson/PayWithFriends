@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group <CODE>-->
+        <!--Group-->
         <scene sceneID="e68-T0-b8Z">
             <objects>
-                <tableViewController title="Group &lt;CODE&gt;" id="m6b-W4-thF" customClass="PaymentListTableView" customModule="Pay_With_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="joinVC" title="Group" id="m6b-W4-thF" customClass="PaymentListTableView" customModule="Pay_With_Friends" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qJe-dA-V9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,38 +46,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U13-1F-deh">
-                                <rect key="frame" x="32" y="107" width="311" height="90"/>
-                                <color key="textColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E95-di-eEh">
-                                <rect key="frame" x="32" y="204.5" width="311" height="39"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="Join Payment Group">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="m6b-W4-thF" kind="show" id="jaJ-9f-jHZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrJ-TT-jAw">
-                                <rect key="frame" x="152" y="303.5" width="71" height="60"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ns-lG-M2E">
-                                <rect key="frame" x="32" y="503.5" width="311" height="39"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2H-5q-4Jt">
+                                <rect key="frame" x="12" y="235" width="351" height="197"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U13-1F-deh">
+                                        <rect key="frame" x="20" y="20" width="311" height="90"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E95-di-eEh">
+                                        <rect key="frame" x="20" y="117" width="311" height="60"/>
+                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pC5-Vk-jGG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <state key="normal" title="Join Payment Group">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinPaymentGroupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GTk-Yj-QcP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="CKY-pP-gOq"/>
+                                    <constraint firstItem="U13-1F-deh" firstAttribute="top" secondItem="z2H-5q-4Jt" secondAttribute="top" constant="20" id="6q4-Ge-poJ"/>
+                                    <constraint firstItem="E95-di-eEh" firstAttribute="leading" secondItem="z2H-5q-4Jt" secondAttribute="leading" constant="20" id="85A-fh-fGj"/>
+                                    <constraint firstAttribute="trailing" secondItem="U13-1F-deh" secondAttribute="trailing" constant="20" id="L4p-0U-Qhe"/>
+                                    <constraint firstItem="U13-1F-deh" firstAttribute="leading" secondItem="z2H-5q-4Jt" secondAttribute="leading" constant="20" id="NuE-rY-jvm"/>
+                                    <constraint firstAttribute="height" constant="197" id="fKI-z1-GQ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="E95-di-eEh" secondAttribute="bottom" constant="20" id="iRc-71-mBC"/>
+                                    <constraint firstAttribute="trailing" secondItem="E95-di-eEh" secondAttribute="trailing" constant="20" id="n7o-DL-qLO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ns-lG-M2E">
+                                <rect key="frame" x="31" y="608" width="312" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="YhZ-iI-Lgs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="Create Payment Group">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="ylf-bV-xmT" kind="show" id="N8V-kp-1Il"/>
@@ -86,17 +97,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="U13-1F-deh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="0H0-nO-YH2"/>
-                            <constraint firstItem="E95-di-eEh" firstAttribute="top" secondItem="U13-1F-deh" secondAttribute="bottom" constant="7.5" id="2r8-ME-wjs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Ns-lG-M2E" secondAttribute="trailing" constant="32" id="9k3-u6-rwx"/>
-                            <constraint firstItem="E95-di-eEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="CfK-Ua-Rtm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U13-1F-deh" secondAttribute="trailing" constant="32" id="FxV-HD-rP5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E95-di-eEh" secondAttribute="trailing" constant="32" id="His-1R-SSI"/>
-                            <constraint firstItem="8Ns-lG-M2E" firstAttribute="top" secondItem="yrJ-TT-jAw" secondAttribute="bottom" constant="140" id="R2c-Qx-dQY"/>
-                            <constraint firstItem="yrJ-TT-jAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rgz-5H-dLV"/>
-                            <constraint firstItem="8Ns-lG-M2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="YYC-qO-0A2"/>
-                            <constraint firstItem="U13-1F-deh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="l2r-j6-ZV3"/>
-                            <constraint firstItem="yrJ-TT-jAw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nQW-zE-PBz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Ns-lG-M2E" secondAttribute="bottom" constant="20" id="6fx-hR-QIc"/>
+                            <constraint firstItem="z2H-5q-4Jt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Iy-Q4-HEg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Ns-lG-M2E" secondAttribute="trailing" constant="32" id="9Pz-m2-jMQ"/>
+                            <constraint firstItem="8Ns-lG-M2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="NPP-4R-Kji"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2H-5q-4Jt" secondAttribute="trailing" constant="12" id="SVl-Wi-frE"/>
+                            <constraint firstItem="z2H-5q-4Jt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="rgI-VW-HAc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -107,6 +113,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="codeTextField" destination="U13-1F-deh" id="JHT-XE-eaZ"/>
+                        <outlet property="createPaymentGroup" destination="8Ns-lG-M2E" id="HmV-Pi-cfv"/>
+                        <outlet property="joinPaymentGroup" destination="E95-di-eEh" id="wfs-Dv-J5H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

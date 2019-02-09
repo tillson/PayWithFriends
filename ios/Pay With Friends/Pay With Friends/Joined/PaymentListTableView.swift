@@ -10,16 +10,16 @@ import UIKit
 
 class PaymentListTableView: UITableViewController {
     
+    var code = ""
+    
     let testArray = [ReceiptItem(name: "Spcy Sand", price: 3.75), ReceiptItem(name: "Ckn Minis 4ct", price: 3.39)]
     
     override func viewDidLoad() {
-        print("view")
+        self.title = "Group \(code)"
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        print(testArray.count)
         
         let nib = UINib(nibName: "ReceiptItemTableViewCell", bundle: nil)
-        print(nib)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         //tableView.register(UINib(nibName: "ReceiptItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
     }
@@ -56,24 +56,5 @@ class PaymentListTableView: UITableViewController {
         
         
     }
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("count")
-//        return testArray.count
-//    }
-//
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//
-//        print("ran")
-//        let item = testArray[indexPath.row]
-//        let cell = ReceiptItemTableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell", receiptItem: item)
-//
-//        cell.foodItemLabel.text = item.name
-//        return cell
-//    }
     
 }
