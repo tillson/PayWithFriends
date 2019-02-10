@@ -17,13 +17,13 @@ class NetworkManager {
     static let baseURL = "https://paywithfriends.appspot.com/api/"
     
     var receiptItems = [ReceiptItem]()
-
+    
     func uploadReceipt(data: Data, onSuccess: @escaping([ReceiptItem]) -> Void, onFailure: @escaping(Error) -> Void) {
+        print(data)
         AF.upload(multipartFormData: { multipartFormData in
-                        multipartFormData.append(data, withName: "receipt")
+            multipartFormData.append(data, withName: "receipt")
                     },
                   to: NetworkManager.baseURL + "uploadReceipt").responseJSON { response in
-            print(response)
             if let error = response.error {
                 onFailure(error)
                 return
@@ -35,6 +35,7 @@ class NetworkManager {
             var array = [ReceiptItem]()
             let json = JSON(object)
             if let jArray = json.array {
+                print(jArray)
                 for jObject in jArray {
                     if let id = jObject["id"].string,
                         let name = jObject["name"].string,
@@ -43,13 +44,16 @@ class NetworkManager {
                     }
                 }
             }
+            self.receiptItems = array
             onSuccess(array)
         }
     }
 
     func getReceiptItems(onSuccess: @escaping([ReceiptItem]) -> Void, onFailure: @escaping(Error) -> Void) {
         AF.request(NetworkManager.baseURL + "getReceiptItems").responseJSON { response in
+            print(response.request?.httpBody)
             if let error = response.error {
+                
                 onFailure(error)
                 return
             }
@@ -68,6 +72,7 @@ class NetworkManager {
                     }
                 }
             }
+            self.receiptItems = array
             onSuccess(array)
         }
     }

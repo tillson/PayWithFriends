@@ -2,23 +2,27 @@ PODS:
   - Alamofire (5.0.0-beta.2)
   - NavKit (0.5)
   - SwiftyJSON (4.2.0)
+  - WVCheckMark (1.0.12)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.2)
   - NavKit (~> 0.5)
   - SwiftyJSON (~> 4.0)
+  - WVCheckMark (~> 1.0.12)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - NavKit
     - SwiftyJSON
+    - WVCheckMark
 
 SPEC CHECKSUMS:
   Alamofire: d1e5493588babe3e7b56ae29e8032942f4de09fe
   NavKit: 882cfbc9a7bf65f0d578d66de1439d5b8aa86605
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  WVCheckMark: abd367048aa3793b82d1c82a15be56eea5b940a7
 
-PODFILE CHECKSUM: fb33d9d0ff8da81cf96b555bd6331f59d5025133
+PODFILE CHECKSUM: ee6f4fdd75cccbb96b7745ebbc2b480092b58308
 
 COCOAPODS: 1.5.0

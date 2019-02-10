@@ -9,16 +9,20 @@
 import UIKit
 import Foundation
 import AVFoundation
+import WVCheckMark
 
 class NewReceiptViewController: UIViewController {
     
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var checkmark: WVCheckMark!
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
     override func viewDidLoad() {
+        
+        navigationController?.navigationBar.tintColor = .white
         
         captureButton.layer.cornerRadius = 15
         
@@ -78,32 +82,17 @@ extension NewReceiptViewController: AVCapturePhotoCaptureDelegate {
                 return
         }
         
-        let capturedImage = UIImage.init(data: imageData , scale: 0.6)
+        
+        let capturedImage = UIImage.init(data: imageData , scale: 0.001)!
+        
+        let data = capturedImage.jpegData(compressionQuality: 0.000001)!
+        checkmark.start()
+        NetworkManager.shared.uploadReceipt(data: data, onSuccess: { response in
+            print(response)
+            self.navigationController?.popViewController(animated: true)
+        }, onFailure: { error in
+            print(error)
+        })
 
-        if let imageData = capturedImage?.jpeg(.lowest) {
-            NetworkManager.shared.uploadReceipt(data: imageData, onSuccess: { response in
-                print(response)
-            }, onFailure: { error in
-                print(error)
-            })
-        }
-
-    }
-}
-
-extension UIImage {
-    enum JPEGQuality: CGFloat {
-        case lowest  = 0
-        case low     = 0.25
-        case medium  = 0.5
-        case high    = 0.75
-        case highest = 1
-    }
-    
-    /// Returns the data for the specified image in JPEG format.
-    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
-    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
-    func jpeg(_ jpegQuality: JPEGQuality) -> Data? {
-        return jpegData(compressionQuality: jpegQuality.rawValue)
     }
 }

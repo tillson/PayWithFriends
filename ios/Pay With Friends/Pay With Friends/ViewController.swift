@@ -21,6 +21,7 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         navItem.tintColor = .white
         joinPaymentGroup.layer.cornerRadius = 15
@@ -90,7 +91,7 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
         
         createPaymentGroup.setTitleColor((paymentGroupOpen ? UIColor.red : UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)), for: .normal)
         createPaymentGroup.setTitle((paymentGroupOpen ? "Close Payment Group" : "Open Payment Group"), for: .normal)
-        
+        joinPaymentGroup.setTitle((paymentGroupOpen ? "Show Virtual Receipt" : "Join Payment Group"), for: .normal)
     }
 }
 
@@ -101,3 +102,4 @@ extension CustomizableNavigation where Self: UIViewController, Self: UIGestureRe
 }
 
 // UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)
+
