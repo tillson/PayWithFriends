@@ -153,29 +153,136 @@
         <!--Confirmation-->
         <scene sceneID="lBg-ay-c8T">
             <objects>
-                <viewController storyboardIdentifier="confirmVC" title="Confirmation" id="6MM-HR-TaM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmVC" title="Confirmation" id="6MM-HR-TaM" customClass="ConfirmationViewController" customModule="Pay_With_Friends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hWW-5w-6Ea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-A4-OhV">
-                                <rect key="frame" x="16" y="112" width="111" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQE-wL-mSj">
+                                <rect key="frame" x="32" y="602" width="311" height="45"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="S1C-6h-2WL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Pay">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="captureClicked:" destination="azV-27-GZZ" eventType="touchUpInside" id="R9O-VQ-jO3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-A4-OhV">
+                                <rect key="frame" x="16" y="549" width="136" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="bcR-8m-XbY"/>
+                                    <constraint firstAttribute="height" constant="45" id="hg7-hd-cfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvU-Me-Smq">
-                                <rect key="frame" x="185" y="112" width="161" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9999.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvU-Me-Smq">
+                                <rect key="frame" x="158" y="549" width="201" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XkC-qe-Y9C"/>
+                                    <constraint firstAttribute="width" constant="201" id="gFn-Uf-jgT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="34"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBTOTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-2O-jdN">
+                                <rect key="frame" x="16" y="20" width="178" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="9Ib-gF-Qte"/>
+                                    <constraint firstAttribute="height" constant="45" id="d3Q-fV-sBk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="36"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9999.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOw-Rr-Ic4">
+                                <rect key="frame" x="202" y="20" width="157" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="GA9-Y5-axk"/>
+                                    <constraint firstAttribute="width" constant="157" id="Kdz-Cu-LuU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAX (4%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0f-lc-XVd">
+                                <rect key="frame" x="16" y="73" width="178" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7Yg-Dq-2JA"/>
+                                    <constraint firstAttribute="width" constant="178" id="wvf-ha-yg6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-Xm-XNv">
+                                <rect key="frame" x="202" y="73" width="157" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="Sit-Nz-YsA"/>
+                                    <constraint firstAttribute="height" constant="45" id="zvW-A6-Jrt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CZ-D4-20v">
+                                <rect key="frame" x="16" y="126" width="178" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="Aj1-Pl-PtQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="bkg-sh-i9g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-E0-7VN">
+                                <rect key="frame" x="202" y="126" width="157" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Psd-1U-LGO"/>
+                                    <constraint firstAttribute="width" constant="157" id="gv6-Sg-qLx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NT8-2O-jdN" firstAttribute="leading" secondItem="1of-SD-3ew" secondAttribute="leading" constant="16" id="4aE-1L-dLr"/>
+                            <constraint firstItem="UVB-A4-OhV" firstAttribute="leading" secondItem="1of-SD-3ew" secondAttribute="leading" constant="16" id="7Kw-eb-oh5"/>
+                            <constraint firstItem="F0f-lc-XVd" firstAttribute="leading" secondItem="1of-SD-3ew" secondAttribute="leading" constant="16" id="BVI-98-BeQ"/>
+                            <constraint firstItem="MOw-Rr-Ic4" firstAttribute="top" secondItem="1of-SD-3ew" secondAttribute="top" id="J0J-0q-wY1"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="trailing" secondItem="VxW-E0-7VN" secondAttribute="trailing" constant="16" id="N8m-DF-uO4"/>
+                            <constraint firstItem="0CZ-D4-20v" firstAttribute="leading" secondItem="1of-SD-3ew" secondAttribute="leading" constant="16" id="SJO-I6-Bnm"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="bottom" secondItem="HQE-wL-mSj" secondAttribute="bottom" constant="20" id="Vn2-1m-7w5"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="trailing" secondItem="NvU-Me-Smq" secondAttribute="trailing" constant="16" id="Zts-qn-Rn5"/>
+                            <constraint firstItem="HQE-wL-mSj" firstAttribute="top" secondItem="UVB-A4-OhV" secondAttribute="bottom" constant="8" id="aMd-W6-jtb"/>
+                            <constraint firstItem="0CZ-D4-20v" firstAttribute="top" secondItem="F0f-lc-XVd" secondAttribute="bottom" constant="8" id="adm-Bi-I5K"/>
+                            <constraint firstItem="HQE-wL-mSj" firstAttribute="leading" secondItem="1of-SD-3ew" secondAttribute="leading" constant="32" id="b39-m3-CBs"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="trailing" secondItem="MOw-Rr-Ic4" secondAttribute="trailing" constant="16" id="bAa-Gt-azH"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="trailing" secondItem="HQE-wL-mSj" secondAttribute="trailing" constant="32" id="bRn-N0-YQH"/>
+                            <constraint firstItem="HQE-wL-mSj" firstAttribute="top" secondItem="NvU-Me-Smq" secondAttribute="bottom" constant="8" id="mFx-Bm-jyV"/>
+                            <constraint firstItem="NT8-2O-jdN" firstAttribute="top" secondItem="1of-SD-3ew" secondAttribute="top" id="n7g-1g-DDk"/>
+                            <constraint firstItem="VxW-E0-7VN" firstAttribute="top" secondItem="zLk-Xm-XNv" secondAttribute="bottom" constant="8" id="qUD-8T-9x8"/>
+                            <constraint firstItem="1of-SD-3ew" firstAttribute="trailing" secondItem="zLk-Xm-XNv" secondAttribute="trailing" constant="16" id="sIB-G7-k8C"/>
+                            <constraint firstItem="F0f-lc-XVd" firstAttribute="top" secondItem="NT8-2O-jdN" secondAttribute="bottom" constant="8" id="sZ6-di-FF4"/>
+                            <constraint firstItem="zLk-Xm-XNv" firstAttribute="top" secondItem="MOw-Rr-Ic4" secondAttribute="bottom" constant="8" id="t8k-vR-Kww"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1of-SD-3ew"/>
                     </view>
+                    <connections>
+                        <outlet property="subtotalLabel" destination="MOw-Rr-Ic4" id="u8a-gg-ozm"/>
+                        <outlet property="taxLabel" destination="zLk-Xm-XNv" id="cMX-Ym-zs2"/>
+                        <outlet property="tipLabel" destination="VxW-E0-7VN" id="xJd-ox-dSm"/>
+                        <outlet property="totalLabel" destination="NvU-Me-Smq" id="wAA-0N-xMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smr-eS-mpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
