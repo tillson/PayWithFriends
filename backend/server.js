@@ -17,7 +17,7 @@ app.post('/api/useCode', function(req, res) {
 
 app.post('/api/uploadReceipt', upload.single('receipt'), function(req, res) {
     client
-    .textDetection('./testassets/finedining.jpg')
+    .textDetection(req.file.path)
     .then(results => {
         const detections = results[0].textAnnotations;
         var words = []
@@ -63,12 +63,12 @@ app.post('/api/uploadReceipt', upload.single('receipt'), function(req, res) {
                 firstPriceLine = i
             }
             if (firstPriceLine != -1 && parseFloat(str.split(' ')[0]) != NaN && offset < firstPriceLine - firstItemLine) {
-                var data = strings[firstItemLine + (i - firstPriceLine)].split(' ');
+                var data = strings[i - firstPriceLine + firstItemLine].split(' ');
                 var quantity = data.shift();
                 var name = data.join(' ');
                 quantity = parseInt(quantity) > -1 ? parseInt(quantity) : 1;
-                while (quantity > 0) {
-                    var itemData = { id: crypto.createHash('sha1').digest('hex'), name: name, price: parseFloat(str), people: [] };
+                for (var k = quantity; k > 0; k--) {
+                    var itemData = { id: crypto.createHash('sha1').digest('hex'), name: name, price: parseFloat(str) / quantity, people: [] };
                     items.push(itemData);
                     quantity--;
                 }
