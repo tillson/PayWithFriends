@@ -22,6 +22,8 @@ class PaymentListTableView: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        navigationController?.navigationBar.tintColor = .white
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             NetworkManager.shared.getReceiptItems(onSuccess: { (newItems) in
                 self.receiptArray = newItems
@@ -37,7 +39,7 @@ class PaymentListTableView: UITableViewController {
             self.receiptArray = items
             self.tableView.reloadData()
         }) { (error) in
-            print(error)
+//            print(error)
         }
         
         let nib = UINib(nibName: "ReceiptItemTableViewCell", bundle: nil)
