@@ -12,10 +12,11 @@ class ReceiptItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var foodItemPriceLabel: UILabel!
     @IBOutlet weak var foodItemLabel: UILabel!
+    @IBOutlet weak var splitLabel: UILabel!
     
     var receiptItem: ReceiptItem
     var chosen: Bool
-    
+        
     public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, receiptItem: ReceiptItem) {
         self.receiptItem = receiptItem
         self.chosen = false
@@ -32,7 +33,7 @@ class ReceiptItemTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

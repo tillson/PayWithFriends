@@ -19,7 +19,6 @@ class NetworkManager {
     var receiptItems = [ReceiptItem]()
     
     func uploadReceipt(data: Data, onSuccess: @escaping([ReceiptItem]) -> Void, onFailure: @escaping(Error) -> Void) {
-        print(data)
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(data, withName: "receipt")
                     },
@@ -77,5 +76,25 @@ class NetworkManager {
         }
     }
     
+    func addReceiptItem(receiptItem: ReceiptItem, onSuccess: @escaping() -> Void, onFailure: @escaping(Error) -> Void) {
+        AF.request(NetworkManager.baseURL + "addReceiptItem", method: .post, parameters: ["id":receiptItem.id, "user": 1]).responseJSON { response in
+            if let error = response.error {
+                onFailure(error)
+                return
+            }
+            onSuccess()
+        }
+    }
+
+    func removeReceiptItem(receiptItem: ReceiptItem, onSuccess: @escaping() -> Void, onFailure: @escaping(Error) -> Void) {
+        AF.request(NetworkManager.baseURL + "removeReceiptItem", method: .post, parameters: ["id":receiptItem.id, "user": 1]).responseJSON { response in
+            if let error = response.error {
+                onFailure(error)
+                return
+            }
+            onSuccess()
+        }
+    }
+
     
 }
