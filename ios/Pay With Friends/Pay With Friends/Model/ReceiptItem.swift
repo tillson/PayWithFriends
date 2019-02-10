@@ -13,11 +13,13 @@ class ReceiptItem {
     let id: String
     let name: String
     let price: Float
+    var people: Int
     
     init(id: String, name: String, price: Float) {
         self.id = id
         self.name = name
         self.price = price
+        self.people = 1
     }
     
 }

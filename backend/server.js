@@ -70,6 +70,9 @@ app.post('/api/uploadReceipt', upload.single('receipt'), function(req, res) {
                     var data = strings[i - firstPriceLine + firstItemLine].split(' ');
                     var quantity = data.shift();
                     var name = data.join(' ');
+                    if (name == 'Voss Stil1') {
+                        name = 'Voss Still';
+                    }
                     quantity = parseInt(quantity) > -1 ? parseInt(quantity) : 1;
                     for (var k = quantity; k > 0; k--) {
                         var itemData = { id: crypto.createHash('sha1').digest('hex'), name: name, price: parseFloat(str) / quantity, people: 0 };

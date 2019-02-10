@@ -12,12 +12,23 @@ class PaymentListTableView: UITableViewController {
     
     var code = ""
     
+    var timer = Timer()
+
     var receiptArray = [ReceiptItem]()
+    var userSelectedItems = [String]()
     
     override func viewDidLoad() {
         self.title = "Group \(code)"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+            NetworkManager.shared.getReceiptItems(onSuccess: { (newItems) in
+                self.receiptArray = newItems
+                self.tableView.reloadData()
+            }, onFailure: { (error) in
+            })
+        })
         
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextView))
         self.navigationItem.rightBarButtonItem = nextButton
@@ -25,7 +36,6 @@ class PaymentListTableView: UITableViewController {
         NetworkManager.shared.getReceiptItems(onSuccess: { (items) in
             self.receiptArray = items
             self.tableView.reloadData()
-            print(items)
         }) { (error) in
             print(error)
         }
@@ -43,7 +53,8 @@ class PaymentListTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 100.0
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +67,11 @@ class PaymentListTableView: UITableViewController {
         cell.selectionStyle = .none
 
         cell.foodItemLabel.text = item.name
-        cell.foodItemPriceLabel.text = "$\(item.price)"
+        let moneyString = String(format: "%.2f", (item.price / Float(item.people)))
+        cell.foodItemPriceLabel.text = "$\(moneyString)"
+        if item.people > 1 {
+            cell.splitLabel.text = "Split between \(item.people) friends"
+        }
         return cell
     }
     
@@ -65,9 +80,11 @@ class PaymentListTableView: UITableViewController {
         if (cell.chosen == false) {
             cell.backgroundColor = .green
             cell.chosen = true
+            NetworkManager.shared.addReceiptItem(receiptItem: cell.receiptItem, onSuccess: {  }, onFailure: { _ in })
         } else {
             tableView.cellForRow(at: indexPath)?.backgroundColor = .none
             cell.chosen = false
+            NetworkManager.shared.removeReceiptItem(receiptItem: cell.receiptItem, onSuccess: {  }, onFailure: { _ in })
         }
 
     }
