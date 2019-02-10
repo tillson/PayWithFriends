@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56716A9E220FFC4500727ED7 /* PaymentTipViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56716A9D220FFC4500727ED7 /* PaymentTipViewViewController.swift */; };
+		56716AA022101D6000727ED7 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56716A9F22101D6000727ED7 /* ConfirmationViewController.swift */; };
 		568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8B16220F3CFB00142091 /* PaymentListTableView.swift */; };
 		568C8B1C220F3FE400142091 /* ReceiptItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */; };
 		568C8B1D220F3FE400142091 /* ReceiptItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568C8B1B220F3FE400142091 /* ReceiptItemTableViewCell.xib */; };
@@ -26,6 +27,7 @@
 		0A5089E234793480FB52EBA2 /* Pods_Pay_With_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_With_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FC8728B45A06FC85EBF9EF /* Pods-Pay With Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay With Friends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pay With Friends/Pods-Pay With Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		56716A9D220FFC4500727ED7 /* PaymentTipViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTipViewViewController.swift; sourceTree = "<group>"; };
+		56716A9F22101D6000727ED7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		568C8B16220F3CFB00142091 /* PaymentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTableView.swift; sourceTree = "<group>"; };
 		568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemTableViewCell.swift; sourceTree = "<group>"; };
 		568C8B1B220F3FE400142091 /* ReceiptItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				568C8B16220F3CFB00142091 /* PaymentListTableView.swift */,
 				568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */,
+				56716A9F22101D6000727ED7 /* ConfirmationViewController.swift */,
 				56716A9D220FFC4500727ED7 /* PaymentTipViewViewController.swift */,
 			);
 			path = Joined;
@@ -253,6 +256,7 @@
 				568C8B1C220F3FE400142091 /* ReceiptItemTableViewCell.swift in Sources */,
 				568C8B1F220F42C000142091 /* ReceiptItem.swift in Sources */,
 				56716A9E220FFC4500727ED7 /* PaymentTipViewViewController.swift in Sources */,
+				56716AA022101D6000727ED7 /* ConfirmationViewController.swift in Sources */,
 				56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */,
 				D81DF22C220FECAB000F74B2 /* NetworkManager.swift in Sources */,
 				56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */,

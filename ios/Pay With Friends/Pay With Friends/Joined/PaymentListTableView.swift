@@ -19,6 +19,9 @@ class PaymentListTableView: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextView))
+        self.navigationItem.rightBarButtonItem = nextButton
+        
         NetworkManager.shared.getReceiptItems(onSuccess: { (items) in
             self.receiptArray = items
             self.tableView.reloadData()
@@ -30,6 +33,13 @@ class PaymentListTableView: UITableViewController {
         let nib = UINib(nibName: "ReceiptItemTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         //tableView.register(UINib(nibName: "ReceiptItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+    }
+    
+    @objc func nextView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "tipVC")
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
