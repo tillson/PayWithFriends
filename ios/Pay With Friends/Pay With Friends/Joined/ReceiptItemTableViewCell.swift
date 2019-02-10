@@ -23,7 +23,7 @@ class ReceiptItemTableViewCell: UITableViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.receiptItem = ReceiptItem(name: "Err", price: -1)
+        self.receiptItem = ReceiptItem(id: "Err", name: "Err", price: -1)
         self.chosen = false
         super.init(coder: aDecoder)
     }

@@ -91,7 +91,7 @@
                                     <color key="titleColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ylf-bV-xmT" kind="show" id="N8V-kp-1Il"/>
+                                    <action selector="createGroupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3lg-kG-MRw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -160,21 +160,6 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="-564.46776611694156"/>
-        </scene>
-        <!--Create Group-->
-        <scene sceneID="dEc-Sv-TN4">
-            <objects>
-                <viewController title="Create Group" id="ylf-bV-xmT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WrD-sc-L6O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="OQS-75-ijQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dIX-SH-1h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="841" y="170"/>
         </scene>
         <!--New Receipt-->
         <scene sceneID="e1i-iF-T6u">

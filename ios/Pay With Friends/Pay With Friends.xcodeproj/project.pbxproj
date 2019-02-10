@@ -18,6 +18,7 @@
 		56AE1173220E7EA00020C18B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */; };
 		56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */; };
 		90B52BD82781C0422A2C56AF /* Pods_Pay_With_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5089E234793480FB52EBA2 /* Pods_Pay_With_Friends.framework */; };
+		D81DF22C220FECAB000F74B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DF22B220FECAB000F74B2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		56AE1174220E7EA00020C18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E6028B220EAD0800774A16 /* NewReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptViewController.swift; sourceTree = "<group>"; };
 		6D4E7BFF8750BAFA53AFACF3 /* Pods-Pay With Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay With Friends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pay With Friends/Pods-Pay With Friends.release.xcconfig"; sourceTree = "<group>"; };
+		D81DF22B220FECAB000F74B2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,6 @@
 			children = (
 				568C8B16220F3CFB00142091 /* PaymentListTableView.swift */,
 				568C8B1A220F3FE400142091 /* ReceiptItemTableViewCell.swift */,
-				568C8B1E220F42C000142091 /* ReceiptItem.swift */,
 			);
 			path = Joined;
 			sourceTree = "<group>";
@@ -81,6 +82,7 @@
 		56AE1167220E7E9F0020C18B /* Pay With Friends */ = {
 			isa = PBXGroup;
 			children = (
+				D81DF22D220FEE42000F74B2 /* Model */,
 				56AE1168220E7E9F0020C18B /* AppDelegate.swift */,
 				56AE116A220E7E9F0020C18B /* ViewController.swift */,
 				56AE116C220E7E9F0020C18B /* Main.storyboard */,
@@ -90,6 +92,7 @@
 				56AE1171220E7EA00020C18B /* LaunchScreen.storyboard */,
 				568C8B23220FCB1E00142091 /* Assets.xcassets */,
 				56AE1174220E7EA00020C18B /* Info.plist */,
+				D81DF22B220FECAB000F74B2 /* NetworkManager.swift */,
 			);
 			path = "Pay With Friends";
 			sourceTree = "<group>";
@@ -109,6 +112,14 @@
 				0A5089E234793480FB52EBA2 /* Pods_Pay_With_Friends.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D81DF22D220FEE42000F74B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				568C8B1E220F42C000142091 /* ReceiptItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,12 +201,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pay With Friends/Pods-Pay With Friends-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/NavKit/NavKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NavKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +248,7 @@
 				568C8B1C220F3FE400142091 /* ReceiptItemTableViewCell.swift in Sources */,
 				568C8B1F220F42C000142091 /* ReceiptItem.swift in Sources */,
 				56AE116B220E7E9F0020C18B /* ViewController.swift in Sources */,
+				D81DF22C220FECAB000F74B2 /* NetworkManager.swift in Sources */,
 				56E6028C220EAD0800774A16 /* NewReceiptViewController.swift in Sources */,
 				568C8B17220F3CFB00142091 /* PaymentListTableView.swift in Sources */,
 				56AE1169220E7E9F0020C18B /* AppDelegate.swift in Sources */,
@@ -384,8 +398,8 @@
 			baseConfigurationReference = 30FC8728B45A06FC85EBF9EF /* Pods-Pay With Friends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 975F8ZM794;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Pay With Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,6 +407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danglingpointers.Pay-With-Friends";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,8 +418,8 @@
 			baseConfigurationReference = 6D4E7BFF8750BAFA53AFACF3 /* Pods-Pay With Friends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 975F8ZM794;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Pay With Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,6 +427,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danglingpointers.Pay-With-Friends";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -18,6 +18,8 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
     @IBOutlet weak var joinPaymentGroup: UIButton!
     @IBOutlet weak var createPaymentGroup: UIButton!
     
+    var paymentGroupOpen = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,7 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
         codeTextField.autocapitalizationType = .allCharacters
         codeTextField.keyboardType = .alphabet
         codeTextField.delegate = self
-        codeTextField.attributedPlaceholder = NSAttributedString(string: "Code", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.40, green:0.73, blue:0.42, alpha:0.3)])
+        codeTextField.attributedPlaceholder = NSAttributedString(string: "00000", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.40, green:0.73, blue:0.42, alpha:0.3)])
         
         joinPaymentGroup.isEnabled = false
         joinPaymentGroup.isUserInteractionEnabled = false
@@ -65,6 +67,12 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func createGroupAction(_ sender: Any) {
+        paymentGroupOpen = !paymentGroupOpen
+        codeTextField.attributedPlaceholder = NSAttributedString(string: (paymentGroupOpen ? "7HFI3" : "00000"), attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.40, green:0.73, blue:0.42, alpha:0.3)])
+        createPaymentGroup.setTitleColor((paymentGroupOpen ? UIColor.red : UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)), for: .normal)
+        createPaymentGroup.setTitle((paymentGroupOpen ? "Close Payment Group" : "Open Payment Group"), for: .normal)
+    }
 }
 
 extension CustomizableNavigation where Self: UIViewController, Self: UIGestureRecognizerDelegate {

@@ -12,7 +12,10 @@ class PaymentListTableView: UITableViewController {
     
     var code = ""
     
-    let testArray = [ReceiptItem(name: "Spcy Sand", price: 3.75), ReceiptItem(name: "Ckn Minis 4ct", price: 3.39)]
+    let testArray = [
+        ReceiptItem(id: "1", name: "Spcy Sand", price: 3.75),
+        ReceiptItem(id: "2", name: "Ckn Minis 4ct", price: 3.39)
+    ]
     
     override func viewDidLoad() {
         self.title = "Group \(code)"
