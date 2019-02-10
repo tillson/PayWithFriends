@@ -61,6 +61,13 @@
             ReferencedContainer = "container:Pay With Friends.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "CFNETWORK_DIAGNOSTICS"
+            value = "3"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
