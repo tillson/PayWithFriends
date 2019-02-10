@@ -18,4 +18,6 @@ class NetworkManager {
     var receiptItems = [ReceiptItem]()
 
     
+    
+    
 }
