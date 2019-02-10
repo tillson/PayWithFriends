@@ -39,7 +39,6 @@ class PaymentListTableView: UITableViewController {
         let item = testArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReceiptItemTableViewCell
         cell.selectionStyle = .none
-        //let cell = ReceiptItemTableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell", receiptItem: item)
 
         cell.foodItemLabel.text = item.name
         cell.foodItemPriceLabel.text = "$\(item.price)"

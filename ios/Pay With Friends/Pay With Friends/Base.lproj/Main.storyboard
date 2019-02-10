@@ -38,6 +38,113 @@
             </objects>
             <point key="canvasLocation" x="841" y="-1301"/>
         </scene>
+        <!--Payment Tip View View Controller-->
+        <scene sceneID="aqF-qU-Bqd">
+            <objects>
+                <viewController id="26v-hS-Pxf" customClass="PaymentTipViewViewController" customModule="Pay_With_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JXP-ov-55o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-1D-6x1">
+                                <rect key="frame" x="147.5" y="220" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Id2-rx-CeT"/>
+                                    <constraint firstAttribute="height" constant="80" id="Tsm-NB-kj5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="20">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickTip20:" destination="26v-hS-Pxf" eventType="touchUpInside" id="kMO-bh-gcV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-P7-QyW">
+                                <rect key="frame" x="147.5" y="77" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6zh-xb-K7p"/>
+                                    <constraint firstAttribute="height" constant="80" id="tqI-fV-SFE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="18">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickTip18:" destination="26v-hS-Pxf" eventType="touchUpInside" id="HEq-zY-1QZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zy-Bp-yzG">
+                                <rect key="frame" x="147.5" y="363" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="kP8-Jo-hDs"/>
+                                    <constraint firstAttribute="height" constant="80" id="zGt-tK-b5z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="22">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickTip22:" destination="26v-hS-Pxf" eventType="touchUpInside" id="4aU-Hg-JzA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4e-Om-4S8">
+                                <rect key="frame" x="32" y="602" width="311" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Lvt-SF-PRc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="captureClicked:" destination="azV-27-GZZ" eventType="touchUpInside" id="2jP-q7-mEE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVW-hw-s4B">
+                                <rect key="frame" x="143.5" y="506" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="Xrk-gn-jJC"/>
+                                    <constraint firstAttribute="height" constant="30" id="pAP-Pc-Si7"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="clickTipOther:" destination="26v-hS-Pxf" eventType="editingDidEnd" id="Kv8-2A-984"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XVW-hw-s4B" firstAttribute="centerX" secondItem="JXP-ov-55o" secondAttribute="centerX" id="1ph-5K-fr2"/>
+                            <constraint firstItem="3Zy-Bp-yzG" firstAttribute="top" secondItem="hyO-1D-6x1" secondAttribute="bottom" constant="63" id="5uu-Zw-Qme"/>
+                            <constraint firstItem="1TC-ms-r88" firstAttribute="trailing" secondItem="U4e-Om-4S8" secondAttribute="trailing" constant="32" id="81z-9r-tGB"/>
+                            <constraint firstItem="XVW-hw-s4B" firstAttribute="top" secondItem="3Zy-Bp-yzG" secondAttribute="bottom" constant="63" id="HLQ-88-iB3"/>
+                            <constraint firstItem="dTg-P7-QyW" firstAttribute="top" secondItem="1TC-ms-r88" secondAttribute="top" constant="57" id="If1-uQ-gHI"/>
+                            <constraint firstItem="U4e-Om-4S8" firstAttribute="leading" secondItem="1TC-ms-r88" secondAttribute="leading" constant="32" id="RgM-x3-Hof"/>
+                            <constraint firstItem="1TC-ms-r88" firstAttribute="bottom" secondItem="U4e-Om-4S8" secondAttribute="bottom" constant="20" id="Yyy-uO-NbJ"/>
+                            <constraint firstItem="3Zy-Bp-yzG" firstAttribute="centerX" secondItem="JXP-ov-55o" secondAttribute="centerX" id="bsf-E5-04L"/>
+                            <constraint firstItem="dTg-P7-QyW" firstAttribute="centerX" secondItem="JXP-ov-55o" secondAttribute="centerX" id="lZi-Ja-Jo4"/>
+                            <constraint firstItem="hyO-1D-6x1" firstAttribute="top" secondItem="dTg-P7-QyW" secondAttribute="bottom" constant="63" id="vtI-rP-QC9"/>
+                            <constraint firstItem="hyO-1D-6x1" firstAttribute="centerX" secondItem="JXP-ov-55o" secondAttribute="centerX" id="yo1-JK-gzz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1TC-ms-r88"/>
+                    </view>
+                    <connections>
+                        <outlet property="tip18" destination="dTg-P7-QyW" id="xN4-uT-Hhy"/>
+                        <outlet property="tip20" destination="hyO-1D-6x1" id="VSp-j8-mLh"/>
+                        <outlet property="tip22" destination="3Zy-Bp-yzG" id="CMj-aB-XU5"/>
+                        <outlet property="tipOther" destination="XVW-hw-s4B" id="XrV-lr-0St"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ijq-6P-LcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="-1301.1994002998501"/>
+        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>

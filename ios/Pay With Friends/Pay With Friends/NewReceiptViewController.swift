@@ -25,6 +25,7 @@ class NewReceiptViewController: UIViewController {
         let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         do {
+            
             let input = try AVCaptureDeviceInput(device: captureDevice!)
             
             captureSession = AVCaptureSession()
@@ -36,9 +37,8 @@ class NewReceiptViewController: UIViewController {
             cameraView.layer.addSublayer(videoPreviewLayer!)
             
             captureSession?.startRunning()
-        } catch {
-            print(error)
-        }
+            
+        } catch { print(error) }
 
     }
     
