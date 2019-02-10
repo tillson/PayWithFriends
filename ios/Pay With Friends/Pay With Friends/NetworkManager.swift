@@ -14,7 +14,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
 
-    static let baseURL = "http://172.24.75.148:8080/api/"
+    static let baseURL = "https://paywithfriends.appspot.com/api/"
     
     var receiptItems = [ReceiptItem]()
 
