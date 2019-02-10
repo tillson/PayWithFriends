@@ -12,7 +12,6 @@ import NavKit
 class ViewController: UIViewController, CustomizableNavigation, UIGestureRecognizerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var codeTextField: UITextField!
-    
     @IBOutlet weak var navItem: UIBarButtonItem!
     @IBOutlet weak var stackBack: UIView!
     @IBOutlet weak var joinPaymentGroup: UIButton!
@@ -46,8 +45,10 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
         guard let text = textField.text else { return true }
         let count = text.count + string.count - range.length
+        
         if count >= 5 {
             joinPaymentGroup.backgroundColor = UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)
             joinPaymentGroup.isEnabled = true
@@ -57,20 +58,37 @@ class ViewController: UIViewController, CustomizableNavigation, UIGestureRecogni
             joinPaymentGroup.isEnabled = false
             joinPaymentGroup.isUserInteractionEnabled = false
         }
+        
         return count <= 5
     }
     
     @IBAction func joinPaymentGroupAction(_ sender: Any) {
+        
         if codeTextField.text?.count != 5 { return }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "joinVC") as! PaymentListTableView
         controller.code = codeTextField.text!
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func createGroupAction(_ sender: Any) {
+        
         paymentGroupOpen = !paymentGroupOpen
-        codeTextField.attributedPlaceholder = NSAttributedString(string: (paymentGroupOpen ? "7HFI3" : "00000"), attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.40, green:0.73, blue:0.42, alpha:0.3)])
+        
+        if paymentGroupOpen {
+            codeTextField.text = "7HF13"
+            joinPaymentGroup.backgroundColor = UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)
+            joinPaymentGroup.isEnabled = true
+            joinPaymentGroup.isUserInteractionEnabled = true
+        } else {
+            codeTextField.text = ""
+            joinPaymentGroup.backgroundColor = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0)
+            joinPaymentGroup.isEnabled = false
+            joinPaymentGroup.isUserInteractionEnabled = false
+        }
+        
         createPaymentGroup.setTitleColor((paymentGroupOpen ? UIColor.red : UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)), for: .normal)
         createPaymentGroup.setTitle((paymentGroupOpen ? "Close Payment Group" : "Open Payment Group"), for: .normal)
         joinPaymentGroup.setTitle((paymentGroupOpen ? "Show Virtual Receipt" : "Join Payment Group"), for: .normal)

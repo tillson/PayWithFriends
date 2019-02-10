@@ -19,6 +19,9 @@ class PaymentListTableView: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextView))
+        self.navigationItem.rightBarButtonItem = nextButton
+        
         NetworkManager.shared.getReceiptItems(onSuccess: { (items) in
             self.receiptArray = items
             self.tableView.reloadData()
@@ -30,6 +33,13 @@ class PaymentListTableView: UITableViewController {
         let nib = UINib(nibName: "ReceiptItemTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         //tableView.register(UINib(nibName: "ReceiptItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+    }
+    
+    @objc func nextView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "tipVC")
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,7 +54,6 @@ class PaymentListTableView: UITableViewController {
         let item = receiptArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReceiptItemTableViewCell
         cell.selectionStyle = .none
-        //let cell = ReceiptItemTableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell", receiptItem: item)
 
         cell.foodItemLabel.text = item.name
         cell.foodItemPriceLabel.text = "$\(item.price)"
