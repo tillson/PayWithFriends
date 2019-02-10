@@ -56,6 +56,7 @@ class NewReceiptViewController: UIViewController {
         
         capturePhotoOutput!.capturePhoto(with: photoSettings, delegate: self)
         
+        
     }
     
 }
@@ -77,10 +78,32 @@ extension NewReceiptViewController: AVCapturePhotoCaptureDelegate {
                 return
         }
         
-        let capturedImage = UIImage.init(data: imageData , scale: 1.0)
-        if let image = capturedImage {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        let capturedImage = UIImage.init(data: imageData , scale: 0.6)
+
+        if let imageData = capturedImage?.jpeg(.lowest) {
+            NetworkManager.shared.uploadReceipt(data: imageData, onSuccess: { response in
+                print(response)
+            }, onFailure: { error in
+                print(error)
+            })
         }
 
+    }
+}
+
+extension UIImage {
+    enum JPEGQuality: CGFloat {
+        case lowest  = 0
+        case low     = 0.25
+        case medium  = 0.5
+        case high    = 0.75
+        case highest = 1
+    }
+    
+    /// Returns the data for the specified image in JPEG format.
+    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
+    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
+    func jpeg(_ jpegQuality: JPEGQuality) -> Data? {
+        return jpegData(compressionQuality: jpegQuality.rawValue)
     }
 }

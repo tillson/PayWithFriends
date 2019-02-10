@@ -8,5 +8,6 @@ target 'Pay With Friends' do
   # Pods for Pay With Friends
   pod 'NavKit', '~> 0.5'
   pod 'Alamofire', '~> 5.0.0-beta.2'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
