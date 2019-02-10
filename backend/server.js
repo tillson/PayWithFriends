@@ -4,16 +4,18 @@ const app = express();
 const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 const crypto = require('crypto');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 var activeReceipt = []
 
 var activeUsers = [];
 
-app.post('/api/generateCode', function(req, res) {
+app.post('/api/useCode', function(req, res) {
 
 });
 
-app.post('/api/uploadReceipt', function(req, res) {
+app.post('/api/uploadReceipt', upload.single('receipt'), function(req, res) {
     client
     .textDetection('./testassets/finedining.jpg')
     .then(results => {
@@ -61,8 +63,9 @@ app.post('/api/uploadReceipt', function(req, res) {
                 firstPriceLine = i
             }
             if (firstPriceLine != -1 && parseFloat(str.split(' ')[0]) != NaN && offset < firstPriceLine - firstItemLine) {
-                var name = strings[firstItemLine + (i - firstPriceLine)].pop();
-                var quantity = strings[firstItemLine + (i - firstPriceLine)][0];
+                var data = strings[firstItemLine + (i - firstPriceLine)].split(' ');
+                var quantity = data.shift();
+                var name = data.join(' ');
                 quantity = parseInt(quantity) > -1 ? parseInt(quantity) : 1;
                 while (quantity > 0) {
                     var itemData = { id: crypto.createHash('sha1').digest('hex'), name: name, price: parseFloat(str), people: [] };
@@ -84,7 +87,7 @@ app.post('/api/uploadReceipt', function(req, res) {
 
 
 app.get('/api/getReceiptItems', function(req, res) {
-    return releaseEvents.json(activeReceipt);
+    return res.json(activeReceipt);
 });
 
 app.post('/api/updateReceiptItem', function(req, res) {

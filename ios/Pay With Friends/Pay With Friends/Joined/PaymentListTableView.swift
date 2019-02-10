@@ -12,15 +12,20 @@ class PaymentListTableView: UITableViewController {
     
     var code = ""
     
-    let testArray = [
-        ReceiptItem(id: "1", name: "Spcy Sand", price: 3.75),
-        ReceiptItem(id: "2", name: "Ckn Minis 4ct", price: 3.39)
-    ]
+    var receiptArray = [ReceiptItem]()
     
     override func viewDidLoad() {
         self.title = "Group \(code)"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        NetworkManager.shared.getReceiptItems(onSuccess: { (items) in
+            self.receiptArray = items
+            self.tableView.reloadData()
+            print(items)
+        }) { (error) in
+            print(error)
+        }
         
         let nib = UINib(nibName: "ReceiptItemTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
@@ -32,11 +37,11 @@ class PaymentListTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testArray.count
+        return receiptArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ReceiptItemTableViewCell {
-        let item = testArray[indexPath.row]
+        let item = receiptArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReceiptItemTableViewCell
         cell.selectionStyle = .none
 
@@ -50,13 +55,11 @@ class PaymentListTableView: UITableViewController {
         if (cell.chosen == false) {
             cell.backgroundColor = .green
             cell.chosen = true
-            
         } else {
             tableView.cellForRow(at: indexPath)?.backgroundColor = .none
             cell.chosen = false
         }
-        
-        
+
     }
     
 }
