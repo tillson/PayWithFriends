@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import NavKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, CustomizableNavigation, UIGestureRecognizerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var codeTextField: UITextField!
     
+    @IBOutlet weak var navItem: UIBarButtonItem!
+    @IBOutlet weak var stackBack: UIView!
     @IBOutlet weak var joinPaymentGroup: UIButton!
     @IBOutlet weak var createPaymentGroup: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navItem.tintColor = .white
         joinPaymentGroup.layer.cornerRadius = 15
         createPaymentGroup.layer.cornerRadius = 15
         
@@ -28,17 +32,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         codeTextField.autocapitalizationType = .allCharacters
         codeTextField.keyboardType = .alphabet
         codeTextField.delegate = self
+        codeTextField.attributedPlaceholder = NSAttributedString(string: "Code", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.40, green:0.73, blue:0.42, alpha:0.3)])
         
         joinPaymentGroup.isEnabled = false
-        joinPaymentGroup.isUserInteractionEnabled = false        
+        joinPaymentGroup.isUserInteractionEnabled = false
+        
+        self.updateNavigation()
+
         
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let count = text.count + string.count - range.length
-        if count == 5 {
-            joinPaymentGroup.backgroundColor = UIColor(red: 0.26, green: 0.65, blue: 0.96, alpha: 1.0)
+        if count >= 5 {
+            joinPaymentGroup.backgroundColor = UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)
             joinPaymentGroup.isEnabled = true
             joinPaymentGroup.isUserInteractionEnabled = true
         } else {
@@ -59,3 +67,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+extension CustomizableNavigation where Self: UIViewController, Self: UIGestureRecognizerDelegate {
+    var titleColor: UIColor { return .white }
+    var titleFont: UIFont { return UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold) }
+    var barBackgroundColor: UIColor { return UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0) }
+}
+
+// UIColor(red:0.40, green:0.73, blue:0.42, alpha:1.0)

@@ -1,0 +1,16 @@
+PODS:
+  - NavKit (0.5)
+
+DEPENDENCIES:
+  - NavKit (~> 0.5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NavKit
+
+SPEC CHECKSUMS:
+  NavKit: 882cfbc9a7bf65f0d578d66de1439d5b8aa86605
+
+PODFILE CHECKSUM: 52e2682a41fdd0aa8006f06fc4bb6a97a8a3859c
+
+COCOAPODS: 1.5.3
