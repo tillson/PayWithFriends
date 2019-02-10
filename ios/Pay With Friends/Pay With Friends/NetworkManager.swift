@@ -17,7 +17,7 @@ class NetworkManager {
     static let baseURL = "https://paywithfriends.appspot.com/api/"
     
     var receiptItems = [ReceiptItem]()
-
+    
     func uploadReceipt(data: Data, onSuccess: @escaping([ReceiptItem]) -> Void, onFailure: @escaping(Error) -> Void) {
         print(data)
         AF.upload(multipartFormData: { multipartFormData in
@@ -44,6 +44,7 @@ class NetworkManager {
                     }
                 }
             }
+            self.receiptItems = array
             onSuccess(array)
         }
     }
@@ -71,6 +72,7 @@ class NetworkManager {
                     }
                 }
             }
+            self.receiptItems = array
             onSuccess(array)
         }
     }

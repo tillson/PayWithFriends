@@ -9,16 +9,20 @@
 import UIKit
 import Foundation
 import AVFoundation
+import WVCheckMark
 
 class NewReceiptViewController: UIViewController {
     
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var checkmark: WVCheckMark!
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
     override func viewDidLoad() {
+        
+        navigationController?.navigationBar.tintColor = .white
         
         captureButton.layer.cornerRadius = 15
         
@@ -82,8 +86,10 @@ extension NewReceiptViewController: AVCapturePhotoCaptureDelegate {
         let capturedImage = UIImage.init(data: imageData , scale: 0.001)!
         
         let data = capturedImage.jpegData(compressionQuality: 0.000001)!
+        checkmark.start()
         NetworkManager.shared.uploadReceipt(data: data, onSuccess: { response in
             print(response)
+            self.navigationController?.popViewController(animated: true)
         }, onFailure: { error in
             print(error)
         })

@@ -187,6 +187,14 @@
                                     <action selector="captureClicked:" destination="azV-27-GZZ" eventType="touchUpInside" id="EEe-C0-HHT"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-Zc-yE6" customClass="WVCheckMark" customModule="WVCheckMark">
+                                <rect key="frame" x="137.5" y="269" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7gF-WT-dId"/>
+                                    <constraint firstAttribute="height" constant="100" id="Kcr-LE-1au"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -195,19 +203,22 @@
                             <constraint firstItem="GLA-tO-YRw" firstAttribute="trailing" secondItem="BOg-bf-YVE" secondAttribute="trailing" id="LAc-kJ-AoV"/>
                             <constraint firstItem="GLA-tO-YRw" firstAttribute="bottom" secondItem="BOg-bf-YVE" secondAttribute="bottom" id="OOR-xv-XiA"/>
                             <constraint firstItem="GLA-tO-YRw" firstAttribute="top" secondItem="BOg-bf-YVE" secondAttribute="top" id="UCo-tP-zlw"/>
+                            <constraint firstItem="ngV-Zc-yE6" firstAttribute="centerX" secondItem="BOg-bf-YVE" secondAttribute="centerX" id="auy-dQ-gKj"/>
                             <constraint firstItem="BOg-bf-YVE" firstAttribute="bottom" secondItem="iao-uM-NgU" secondAttribute="bottom" constant="24" id="eJE-Ub-rV4"/>
                             <constraint firstItem="iao-uM-NgU" firstAttribute="leading" secondItem="BOg-bf-YVE" secondAttribute="leading" constant="32" id="km2-Uk-iDk"/>
+                            <constraint firstItem="ngV-Zc-yE6" firstAttribute="top" secondItem="BOg-bf-YVE" secondAttribute="top" constant="205" id="see-Qg-tIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BOg-bf-YVE"/>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="GLA-tO-YRw" id="FvO-V9-81f"/>
                         <outlet property="captureButton" destination="iao-uM-NgU" id="Z6k-9V-iuI"/>
+                        <outlet property="checkmark" destination="ngV-Zc-yE6" id="EUC-RQ-By0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1f-kr-IIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="-564"/>
+            <point key="canvasLocation" x="1736.8" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oa8-gp-Wzw">
